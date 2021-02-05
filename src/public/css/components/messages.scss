@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  height: 400px;
+  max-height: calc(100vh - 180px);
+  height: 600px;
   margin-bottom: 24px;
   border-radius: 6px;
 
@@ -11,14 +12,15 @@
   }
 
   &__item {
-    background-color: rgba($clr-grey, 0.12);
+    background-color: rgba($clr-grey, 0.1);
     margin: 4px 0;
     padding: 8px;
     border-radius: 6px;
   }
 
   &__image {
-
+    margin: 8px 0 -4px 0;
+    border-radius: 6px;
   }
 
   &__client {

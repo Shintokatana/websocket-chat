@@ -22,6 +22,7 @@
           v-if="message.type === 'image'"
           :src="message.message"
           alt=""
+          @load="scrollDown"
       />
     </div>
   </perfect-scrollbar>
@@ -38,14 +39,19 @@ export default {
   },
   watch: {
     'chat.messages.length'() {
+      this.scrollDown();
+    }
+  },
+  methods: {
+    scrollDown() {
       this.$nextTick(() => {
-        const el = this.$refs.scroll.$el;
+        const wrapper = this.$refs.scroll.$el;
 
-        el.scrollTo({
-          top: el.scrollHeight,
+        wrapper.scrollTo({
+          top: wrapper.scrollHeight,
           behavior: 'smooth'
         });
-      })
+      });
     }
   }
 }

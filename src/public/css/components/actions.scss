@@ -1,0 +1,51 @@
+.actions {
+  display: flex;
+  &__input {
+    flex-grow: 1;
+    padding: 8px 16px;
+    border: 1px solid $clr-grey;
+    color: $clr-text;
+    background-color: transparent;
+    border-radius: 6px;
+    transition: 0.35s ease-in;
+
+    &:focus {
+      background-color: rgba($clr-text, 0.12);
+      border: 1px solid darken($clr-text, 20);
+    }
+  }
+}
+
+.send {
+  width: 36px;
+  height: 36px;
+  margin: 0 16px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  overflow: hidden;
+
+  &:hover {
+    background-color: transparent!important;
+  }
+
+  &:not(:disabled):hover {
+    .chlen {
+      fill: $clr-blue;
+    }
+  }
+
+  .chlen {
+    transform: translate(-12px, -5px);
+    fill: $clr-grey;
+    transition: fill 0.3s ease-in, transform 0.2s ease-in;
+
+    &-enter-to {
+      transform: translate(-200%, -5px);
+    }
+
+    &-leave-to {
+      transform: translate(100%, -5px);
+    }
+  }
+}

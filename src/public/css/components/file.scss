@@ -1,0 +1,24 @@
+.file {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  svg {
+    width: 65%;
+    fill: $clr-grey;
+    transition: 0.35s ease-in;
+  }
+
+  &:hover {
+    svg {
+      fill: $clr-blue;
+    }
+  }
+}

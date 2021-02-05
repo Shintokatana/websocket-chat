@@ -6,6 +6,8 @@
 @import 'components/chat';
 @import 'components/title';
 @import 'components/messages';
+@import 'components/actions';
+@import 'components/file';
 
 html {
     font-family: $font;
@@ -27,7 +29,7 @@ html {
 
 main {
     max-width: 640px;
-    margin: 64px auto;
+    margin: 64px auto 0 auto;
 
     img {
         max-width: 100%;
