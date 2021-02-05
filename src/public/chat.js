@@ -1,4 +1,4 @@
-const URL = 'ws://localhost:9001';
+const URL = 'ws://10.1.1.232:9003';
 
 const states = {
     DEFAULT: 'default',

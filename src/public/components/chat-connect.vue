@@ -9,7 +9,8 @@
        <div class="connect__title">
          <p>Type your nickname</p>
          <p class="connect__generated" v-if="generated">
-           or proceed with generated one
+           or proceed with generated one.
+           Extrawest 2021
          </p>
        </div>
 

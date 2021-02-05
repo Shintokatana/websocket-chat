@@ -34,6 +34,7 @@ module.exports = {
     createHtmlPlugin('application', 'index')
   ],
   devServer: {
+    host: '0.0.0.0',
     contentBase: './dist',
     compress: true,
     port: 9012

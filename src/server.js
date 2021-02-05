@@ -8,35 +8,41 @@ const app = express();
 app.use(cors());
 app.options('*', cors());
 
-app.get('/', express.static(path.join(__dirname, 'public')));
+app.get('/', express.static(path.join(__dirname, '../dist')));
+app.get('/application.bundle.js', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/application.bundle.js'))
+});
+
+app.get('/manifest.json', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/manifest.json'))
+})
+
 app.get('/client.js', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/client.js'));
 });
 
-const wss = new WebSocket.Server({
-  port: 9001
-});
+app.listen('9002');
+const wss = new WebSocket.Server({ server: app, port: 9003 });
+
 
 const chatHistory = [];
-
-const sendMessage = () => {
+const sendMessage = (ws = null, type = null) => {
   wss.clients.forEach(singleClient => {
-    singleClient.send(JSON.stringify({messagesList: chatHistory, users: wss.clients.size }))
+    if (singleClient !== ws) {
+      singleClient.send(JSON.stringify({ messagesList: chatHistory, users: wss.clients.size }))
+    }
   });
 }
 
-wss.on('connection', function connection(ws) {
-
+wss.on('connection',ws => {
   sendMessage()
-  ws.on('message', function incoming(message) {
+  ws.on('message', message => {
     const clientResponse = JSON.parse(message);
     if (message.type === 'keepAlive') {
       sendMessage()
     } else {
       chatHistory.push(clientResponse)
-      sendMessage()
+      sendMessage(ws, )
     }
   });
 });
-
-app.listen('9000');

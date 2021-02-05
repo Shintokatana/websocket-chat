@@ -1,0 +1,14 @@
+{
+  "name": "401 room chat",
+  "short_name": "Penus",
+  "start_url": "http://10.1.1.232:9012/",
+  "display": "standalone",
+  "background_color": "#fff",
+  "description": "Penus",
+  "icons": [{
+    "src": "images/touch/homescreen48.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  }
+  ]
+}
