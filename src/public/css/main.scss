@@ -1,0 +1,35 @@
+@import 'reset';
+@import 'vars';
+@import 'logo';
+@import 'components/common';
+@import 'components/connect';
+@import 'components/chat';
+@import 'components/title';
+@import 'components/messages';
+
+html {
+    font-family: $font;
+    color: $clr-text;
+    background-color: #0E1621;
+
+    * {
+        font-family: $font;
+
+        &::placeholder {
+            font-family: $font;
+        }
+
+        &::selection {
+            background-color: rgba($clr-grey, 0.5);
+        }
+    }
+}
+
+main {
+    max-width: 640px;
+    margin: 64px auto;
+
+    img {
+        max-width: 100%;
+    }
+}

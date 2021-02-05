@@ -1,0 +1,9 @@
+.chat {
+  &-enter-active, &-leave-active {
+    transition: .35s ease-in;
+  }
+  &-enter, &-leave-to {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+}

@@ -1,0 +1,39 @@
+button, input {
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  padding: 8px 16px;
+  border: 1px solid darken($clr-text, 20);
+  color: $clr-text;
+  background-color: rgba($clr-text, 0.12);
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.35s ease-in;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.85;
+  }
+
+  &:not([disabled]):hover {
+    color: white;
+    background-color: rgba($clr-text, 0.24);
+  }
+
+  &:not([disabled]):active {
+    color: $clr-grey;
+    background-color: transparent;
+  }
+}
+
+.vue-notification {
+  margin-right: 0;
+  background: rgba($clr-grey, 0.5);
+  border-left-color: rgba(crimson, 0.8);
+  color: $clr-text;
+  cursor: pointer;
+}

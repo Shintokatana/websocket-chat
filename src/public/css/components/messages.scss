@@ -1,0 +1,33 @@
+.messages {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 400px;
+  margin-bottom: 24px;
+  border-radius: 6px;
+
+  .ps__rail-y {
+    background-color: transparent !important;
+  }
+
+  &__item {
+    background-color: rgba($clr-grey, 0.12);
+    margin: 4px 0;
+    padding: 8px;
+    border-radius: 6px;
+  }
+
+  &__image {
+
+  }
+
+  &__client {
+    font-size: 12px;
+  }
+
+  &__text {
+    color: $clr-text;
+    word-break: break-word;
+  }
+}
+

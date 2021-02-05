@@ -1,0 +1,11 @@
+.chat-title {
+  margin-bottom: 24px;
+  color: rgba($clr-text, 0.55);
+  font-size: 14px;
+
+  &__user {
+    font-weight: bold;
+    color: $clr-text;
+    font-size: 16px;
+  }
+}
